@@ -1,34 +1,95 @@
-# 🧠 Customer Review Sentiment Analyzer (NLP)
+# 🛒 Customer Review Sentiment Analyzer (NLP Project)
 
-An interactive **Streamlit web app** that analyzes customer reviews and predicts whether the sentiment is **Positive 😊 or Negative 😞** using a Machine Learning model trained on the **Amazon Reviews dataset**.
-
----
-
-## 🚀 Project Overview
-
-- Built an **end-to-end NLP pipeline** for sentiment analysis on customer reviews.
-- Used **TF-IDF vectorization** for feature extraction and **Logistic Regression** for classification.
-- Developed a **real-time web app** using **Streamlit** for user interaction.
-- Deployed and shareable as a live demo or via GitHub repository for portfolio use.
+## 📖 Overview
+This project is a **Natural Language Processing (NLP)** web application that analyzes **Amazon product reviews** to predict sentiment — **Positive 😊** or **Negative 😞**.  
+It demonstrates the complete **ML lifecycle** — data preprocessing, feature extraction, model training, evaluation, and deployment.
 
 ---
 
-## 🧩 Tech Stack
-
-| Category | Tools / Libraries |
-|-----------|------------------|
-| Language | Python |
-| Data Handling | pandas, numpy |
-| Machine Learning | scikit-learn, TF-IDF, Logistic Regression |
-| Deployment | Streamlit |
-| Model Saving | joblib |
-| Dataset | Amazon Product Reviews (Kaggle) |
+## 🎯 Objective
+E-commerce companies receive millions of reviews daily.  
+Manually identifying customer sentiment is time-consuming.  
+This project automates that process using **TF-IDF + Logistic Regression**, helping businesses understand customer opinions quickly.
 
 ---
 
-## ⚙️ Installation & Setup
+## ⚙️ Workflow
 
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/YOUR_USERNAME/amazon-sentiment-analysis.git
-cd amazon-sentiment-analysis
+### 1️⃣ Data Source
+- Dataset: [Amazon Reviews (FastText)](https://www.kaggle.com/datasets/bittlingmayer/amazonreviews)
+- Format: Pre-labeled text reviews (`__label__1` = Positive, `__label__2` = Negative)
+
+### 2️⃣ Data Preprocessing
+- Lowercasing  
+- Removing punctuation and digits  
+- Stripping extra spaces  
+- Tokenization  
+
+### 3️⃣ Feature Engineering
+- Used **TF-IDF Vectorizer** (10,000 max features) to convert text into numerical vectors.
+
+### 4️⃣ Model Building
+Trained and compared:
+- **Logistic Regression** → Accuracy ~92%  
+- **XGBoost** → Accuracy ~90%
+
+### 5️⃣ Deployment
+- Built an **interactive Streamlit web app** for real-time sentiment prediction.
+- Deployed successfully on **Hugging Face Spaces**.
+
+---
+
+## 💻 Tech Stack
+- **Python**
+- **Streamlit**
+- **scikit-learn**
+- **xgboost**
+- **pandas**, **numpy**
+- **joblib**
+- **Hugging Face Spaces**
+
+---
+
+## 🧠 How It Works
+1. User inputs a product review.
+2. Text is preprocessed and converted using the saved TF-IDF vectorizer.
+3. The trained Logistic Regression model predicts sentiment.
+4. The app displays “😊 Positive” or “😞 Negative” instantly.
+
+---
+
+## 🚀 Live Demo
+🔗 **[Try the App Here (Hugging Face)](https://huggingface.co/spaces/manishadharmik/customer-review-sentiment-analyzer)**
+
+---
+
+## 📂 Folder Structure
+amazon-sentiment/
+│
+├── app.py # Streamlit application
+├── sentiment_lr_model.pkl # Trained Logistic Regression model
+├── tfidf_vectorizer.pkl # TF-IDF vectorizer
+├── requirements.txt # Project dependencies
+├── README.md # Project documentation
+└── data/ # (optional) Dataset for local testing
+
+---
+
+## 📊 Results
+| Model | Accuracy | Features |
+|--------|-----------|-----------|
+| Logistic Regression | 92% | TF-IDF |
+| XGBoost | 90% | TF-IDF |
+
+---
+
+## 🏆 Skills Demonstrated
+- Natural Language Processing (NLP)
+- Text Preprocessing
+- TF-IDF Vectorization
+- Logistic Regression, XGBoost
+- Streamlit App Development
+- Model Deployment (Hugging Face)
+
+---
+
