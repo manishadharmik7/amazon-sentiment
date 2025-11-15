@@ -1,121 +1,101 @@
-🛒 Customer Review Sentiment Analyzer (NLP Project)
+# 🛒 Customer Review Sentiment Analyzer (NLP Project)
 
-A Natural Language Processing (NLP) web app that analyzes Amazon product reviews and predicts whether the sentiment is Positive 😊 or Negative 😞.
-The project demonstrates end-to-end NLP pipeline: preprocessing → feature extraction → model training → evaluation → deployment.
+## 📖 Overview
 
-🔗 Live App: https://huggingface.co/spaces/manishadharmik/customer-review-sentiment-analyzer
+This project is a Natural Language Processing (NLP) web application that analyzes Amazon product reviews to predict sentiment — **Positive 😊** or **Negative 😞**.
+It demonstrates the complete ML lifecycle: data preprocessing, feature extraction, model training, evaluation, and deployment.
 
-📦 Repository: https://github.com/manishadharmik7/amazon-sentiment
+## 🎯 Objective
 
-📖 Overview
+E-commerce companies receive millions of reviews daily.
+Manually identifying customer sentiment is time-consuming.
+This project automates that process using **TF-IDF + Logistic Regression**, helping businesses understand customer opinions quickly.
 
-E-commerce platforms receive millions of customer reviews.
-Manually analyzing sentiment is slow and inefficient—this app automates the process using TF-IDF + Logistic Regression, enabling fast and accurate insights.
+## ⚙️ Workflow
 
-🎯 Objective
+### 1️⃣ Data Source
 
-Automatically classify review sentiment
+* Dataset: Amazon Reviews (FastText format)
+* Labels:
 
-Help businesses understand customer opinion at scale
+  * `__label__1` = Positive
+  * `__label__2` = Negative
 
-Build a lightweight, fast, deployable NLP model
+### 2️⃣ Data Preprocessing
 
-⚙️ Workflow
-1️⃣ Data Source
+* Lowercasing
+* Removing punctuation and digits
+* Stripping extra spaces
+* Tokenization
 
-Amazon Product Reviews (FastText format)
+### 3️⃣ Feature Engineering
 
-Labels:
+* TF-IDF Vectorizer (**10,000 max features**)
+* Converts text into numerical vectors
 
-__label__1 → Positive
+### 4️⃣ Model Building
 
-__label__2 → Negative
+Trained and compared:
 
-2️⃣ Data Preprocessing
+* **Logistic Regression → ~92% accuracy**
+* **XGBoost → ~90% accuracy**
 
-Lowercasing
+### 5️⃣ Deployment
 
-Removing punctuation & digits
+* Interactive Streamlit web app
+* Real-time sentiment prediction
+* Deployed on **Hugging Face Spaces**
 
-Strip extra spaces
+## 💻 Tech Stack
 
-Tokenization
+* Python
+* Streamlit
+* scikit-learn
+* xgboost
+* pandas, numpy
+* joblib
+* Hugging Face Spaces
 
-3️⃣ Feature Engineering
+## 🧠 How It Works
 
-TF-IDF Vectorizer
+1. User inputs a product review
+2. Text is preprocessed
+3. Converted using saved TF-IDF vectorizer
+4. Trained LR model predicts sentiment
+5. Displays: **😊 Positive** or **😞 Negative**
 
-max_features = 10,000
+## 🚀 Live Demo
 
-4️⃣ Model Building
+🔗 Hugging Face App: [https://huggingface.co/spaces/manishadharmik/customer-review-sentiment-analyzer](https://huggingface.co/spaces/manishadharmik/customer-review-sentiment-analyzer)
+📦 GitHub Repo: [https://github.com/manishadharmik7/amazon-sentiment.git](https://github.com/manishadharmik7/amazon-sentiment.git)
 
-Logistic Regression → ~92% accuracy
+## 📂 Folder Structure
 
-XGBoost → ~90% accuracy
-
-5️⃣ Deployment
-
-Interactive Streamlit UI
-
-Deployed on Hugging Face Spaces
-
-💻 Tech Stack
-
-Python
-
-Streamlit
-
-scikit-learn
-
-XGBoost
-
-pandas, numpy
-
-joblib
-
-Hugging Face Spaces
-
-🧠 How It Works
-
-User enters a review
-
-Text is preprocessed
-
-Converted into vectors using TF-IDF
-
-Model predicts sentiment
-
-Output displayed instantly:
-
-😊 Positive
-
-😞 Negative
-
-📂 Folder Structure
+```
 amazon-sentiment/
-│── app.py                      # Streamlit application
-│── sentiment_lr_model.pkl      # Trained Logistic Regression model
-│── tfidf_vectorizer.pkl        # Saved TF-IDF vectorizer
-│── requirements.txt
-│── README.md
-└── data/                       # (optional) dataset for local testing
+│── app.py                     # Streamlit application
+│── sentiment_lr_model.pkl     # Logistic Regression model
+│── tfidf_vectorizer.pkl       # TF-IDF vectorizer
+│── requirements.txt           # Dependencies
+│── README.md                  # Documentation
+└── data/                      # (optional) dataset for testing
+```
 
-📊 Results
-Model	Accuracy	Features
-Logistic Regression	92%	TF-IDF
-XGBoost	90%	TF-IDF
-🏆 Skills Demonstrated
+## 📊 Results
 
-Natural Language Processing
+| Model               | Accuracy | Features |
+| ------------------- | -------- | -------- |
+| Logistic Regression | 92%      | TF-IDF   |
+| XGBoost             | 90%      | TF-IDF   |
 
-Text Preprocessing
+## 🏆 Skills Demonstrated
 
-TF-IDF Vectorization
+* Natural Language Processing
+* Text Preprocessing
+* TF-IDF Vectorization
+* Logistic Regression, XGBoost
+* Streamlit App Development
+* Model Deployment (Hugging Face)
 
-Logistic Regression & XGBoost
+---
 
-Model Evaluation
-
-Streamlit App Development
-
-Deployment on Hugging Face
